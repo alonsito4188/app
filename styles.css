@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', monospace;
+    background: #1a1a1a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.game-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #2d1810 0%, #1a1a1a 100%);
+}
+
+/* Header Styles */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #8B4513;
+}
+
+.currency-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nugget-icon {
+    font-size: 24px;
+    filter: drop-shadow(0 0 8px #FFD700);
+}
+
+.currency-count {
+    font-size: 24px;
+    font-weight: 900;
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700;
+}
+
+.currency-label {
+    font-size: 12px;
+    color: #D2691E;
+    font-weight: 700;
+}
+
+.level-display {
+    background: linear-gradient(45deg, #8B4513, #CD853F);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid #FFD700;
+}
+
+.level-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFD700;
+}
+
+/* Main Game Area */
+.game-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.clicker-area {
+    text-align: center;
+    position: relative;
+}
+
+.cowboy-character {
+    font-size: 120px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+    user-select: none;
+}
+
+.cowboy-character:hover {
+    transform: scale(1.1);
+}
+
+.cowboy-character:active {
+    transform: scale(0.95);
+}
+
+.click-instruction {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #D2691E;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.click-effects {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #32CD32;
+    font-weight: 900;
+    font-size: 18px;
+    opacity: 0;
+    animation: floatUp 1s ease-out;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0px); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-50px); }
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    display: flex;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 2px solid #8B4513;
+}
+
+.nav-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #8B4513;
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: rgba(139, 69, 19, 0.3);
+    color: #FFD700;
+}
+
+.nav-icon {
+    font-size: 20px;
+}
+
+.nav-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Shop Panel */
+.shop-panel,
+.leaderboard-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 26, 0.95);
+    padding: 20px;
+    display: none;
+}
+
+.shop-panel h2,
+.leaderboard-panel h2 {
+    text-align: center;
+    color: #FFD700;
+    margin-bottom: 30px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #FFD700;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.shop-item {
+    background: linear-gradient(145deg, #2d1810, #1a1a1a);
+    border: 2px solid #8B4513;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.shop-item:hover {
+    border-color: #FFD700;
+    transform: translateY(-5px);
+}
+
+.shop-item.locked {
+    opacity: 0.6;
+    border-color: #666;
+}
+
+.item-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.item-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #D2691E;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.item-price {
+    font-size: 14px;
+    color: #FFD700;
+    font-weight: 900;
+}
+
+/* Leaderboard */
+.leaderboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(145deg, #2d1810, #1a1a1a);
+    border: 2px solid #8B4513;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.leaderboard-item.rank-1 {
+    border-color: #FFD700;
+    background: linear-gradient(145deg, #2d1810, #332200);
+}
+
+.leaderboard-item.rank-2 {
+    border-color: #C0C0C0;
+}
+
+.leaderboard-item.rank-3 {
+    border-color: #CD7F32;
+}
+
+.rank {
+    font-weight: 900;
+    color: #FFD700;
+    min-width: 40px;
+}
+
+.player {
+    flex: 1;
+    text-align: center;
+    font-weight: 700;
+    color: #D2691E;
+    font-size: 12px;
+}
+
+.score {
+    color: #32CD32;
+    font-weight: 900;
+    font-size: 12px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .game-container {
+        max-width: 500px;
+    }
+    
+    .cowboy-character {
+        font-size: 150px;
+    }
+    
+    .shop-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .game-container {
+        max-width: 600px;
+    }
+}

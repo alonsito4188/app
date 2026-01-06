@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Rush Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header with currency -->
+        <header class="game-header">
+            <div class="currency-display">
+                <span class="nugget-icon">🟨</span>
+                <span class="currency-count">1,247</span>
+                <span class="currency-label">NUGGETS</span>
+            </div>
+            <div class="level-display">
+                <span class="level-label">LEVEL 12</span>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="game-main">
+            <div class="clicker-area">
+                <div class="cowboy-character">🤠</div>
+                <p class="click-instruction">CLICK THE COWBOY!</p>
+                <div class="click-effects">+5 NUGGETS</div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active">
+                <span class="nav-icon">🎯</span>
+                <span class="nav-label">PLAY</span>
+            </button>
+            <button class="nav-btn">
+                <span class="nav-icon">🛒</span>
+                <span class="nav-label">SHOP</span>
+            </button>
+            <button class="nav-btn">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">STYLE</span>
+            </button>
+            <button class="nav-btn">
+                <span class="nav-icon">🏆</span>
+                <span class="nav-label">RANKS</span>
+            </button>
+        </nav>
+
+        <!-- Shop Panel (Hidden by default) -->
+        <div class="shop-panel">
+            <h2>GENERAL STORE</h2>
+            <div class="shop-grid">
+                <div class="shop-item">
+                    <div class="item-icon">🎩</div>
+                    <div class="item-name">TOP HAT</div>
+                    <div class="item-price">500 🟨</div>
+                </div>
+                <div class="shop-item">
+                    <div class="item-icon">🥾</div>
+                    <div class="item-name">COWBOY BOOTS</div>
+                    <div class="item-price">300 🟨</div>
+                </div>
+                <div class="shop-item">
+                    <div class="item-icon">🌵</div>
+                    <div class="item-name">DESERT THEME</div>
+                    <div class="item-price">1000 🟨</div>
+                </div>
+                <div class="shop-item locked">
+                    <div class="item-icon">⭐</div>
+                    <div class="item-name">PREMIUM SKIN</div>
+                    <div class="item-price">PREMIUM</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Panel -->
+        <div class="leaderboard-panel">
+            <h2>WANTED: TOP MINERS</h2>
+            <div class="leaderboard-list">
+                <div class="leaderboard-item rank-1">
+                    <span class="rank">#1</span>
+                    <span class="player">QUICK_DRAW_MCGRAW</span>
+                    <span class="score">50,847 🟨</span>
+                </div>
+                <div class="leaderboard-item rank-2">
+                    <span class="rank">#2</span>
+                    <span class="player">DESERT_ROSE</span>
+                    <span class="score">42,156 🟨</span>
+                </div>
+                <div class="leaderboard-item rank-3">
+                    <span class="rank">#3</span>
+                    <span class="player">CACTUS_JACK</span>
+                    <span class="score">38,291 🟨</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">#12</span>
+                    <span class="player">YOU</span>
+                    <span class="score">1,247 🟨</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
